@@ -53,9 +53,8 @@ function Showdata() {
     ):(
       ""
       )}
-      <link to = "/add"> Add Data</link> 
+      <Link to ="/add"> Add Data</Link> 
     </>
-  )
-}
+  )}
 
 export default Showdata
