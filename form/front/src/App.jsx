@@ -13,7 +13,7 @@ function App() {
      
 
   const nishaIderDekho=() =>{
-   axios.post("http://localhost:5000/new" ,{
+   axios.post("http://localhost:5000/student/new" ,{
     name,phone,age
    })
    .then((result)=>{
@@ -28,15 +28,20 @@ function App() {
       nishaIderDekho()
     } }>
      <label htmlFor=""> First Name :</label>
-     <input type="text" placeholder='Enter your name' value={name}  id='fname'  onChange={(e)=>{setName(e.target.value)}}  />
+     <input type="text"
+      placeholder='Enter your name'
+      value={name}  id='fname'
+      onChange={(e)=>{setName(e.target.value)}}  />
 
      <label htmlFor="">phone :</label>
-     <input type="phone" placeholder='Enter your name'value={phone} id='phone' onChange={(e)=>{setPhone(e.target.value)}} />
+     <input type="phone"
+      placeholder='Enter your name'
+      value={phone} id='phone' onChange={(e)=>{setPhone(e.target.value)}} />
 
      <label htmlFor="">Age :</label>
      <input type="age" placeholder='Enter your Age' value={age} id='age' onChange={(e)=>{setAge(e.target.value)}}/>
        
-       <button className='btn'> submit</button>
+     <button className='btn'> submit</button>
     </form>
     </>
   )
