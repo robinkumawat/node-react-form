@@ -1,4 +1,4 @@
-import  express  from "express";
+  import  express  from "express";
 import studentModel from "./studentModel.js";
  const studentRouter = express.Router();
 
@@ -17,11 +17,7 @@ studentRouter.get("/", async(req, res) => {
 });
 
 studentRouter.post("/new", async(req,res) => {
-    // const newStudent = req.body
-    // const newid =students[students.length-1].id+1
-    // newStudent.id=newid;
-    // students.push(newStudent)
-    // res.json(students)
+    
     const {name,age,phone} =req.body;
 
     const newStudent = new studentModel({
@@ -32,11 +28,11 @@ studentRouter.post("/new", async(req,res) => {
     res.status(201).json(result);
 });
 
-studentRouter.delete("/delete/:id(\\d+)", (req, res) => {
-    const idtoDelete = Number(req.url.split("/delete/")[1])
-    students = students.filter((user) => {
-        return user.id != idtoDelete
-    })
+studentRouter.delete("/delete/:id", async (req, res) => {
+    const id =req .url.split("/delete/")[1]
+    // console.log(id);
+    await studentModel.deleteOne({_id:id})
+    
     res.json(students) 
 })
 

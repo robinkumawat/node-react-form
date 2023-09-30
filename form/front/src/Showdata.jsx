@@ -11,7 +11,7 @@ function Showdata() {
     setData(result.data);
   }
 
-  function handleDelete(id) {
+  const handleDelete = async (id) => {
 
     const result = axios.delete(`http://localhost:5000/student/delete/${id}`);
     // if (result.status === 200 && result.statusText === "OK");
@@ -40,7 +40,7 @@ function Showdata() {
                   <td>{student.age}</td>
                   <td>{student.phone}</td>
                   <td>
-                    <button onClick={() => handleDelete(student.id)}>
+                    <button onClick={() => handleDelete(student._id)}>
                       Delete
                     </button>{" "}
                     ||<button>Edit</button>

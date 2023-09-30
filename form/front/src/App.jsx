@@ -12,7 +12,7 @@ function App() {
   const [age, setAge] = useState("");
      
 
-  const nishaIderDekho=() =>{
+  const heandleClick=() =>{
    axios.post("http://localhost:5000/student/new" ,{
     name,phone,age
    })
@@ -25,7 +25,7 @@ function App() {
     <>
     <form onSubmit= {(e)=>{
       e.preventDefault()
-      nishaIderDekho()
+      heandleClick()
     } }>
      <label htmlFor=""> First Name :</label>
      <input type="text"
